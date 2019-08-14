@@ -1,0 +1,13 @@
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+#[commit]
+#	template = $HOME/.config/git/git_config_msg.txt
+[core]
+	autocrlf = input
+	pager = less -r
+	excludesfile = $HOME/.config/git/ignore
+[color]
+	ui = auto
