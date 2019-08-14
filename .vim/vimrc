@@ -1,0 +1,331 @@
+" Set shell
+set shell=/usr/local/bin/zsh
+set encoding=utf-8
+
+" Install Plug if not already installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+""""""""""""""""""
+" Vundle Plugins "
+""""""""""""""""""
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'chr4/nginx.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'elzr/vim-json'
+Plugin 'morhetz/gruvbox'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'fatih/vim-go'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'cespare/vim-toml'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+""""""""""""""""
+" Plug Plugins "
+""""""""""""""""
+call plug#begin('~/.vim/plugged')
+
+Plug 'lfv89/vim-interestingwords'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Townk/vim-autoclose'
+Plug 'tpope/vim-commentary'
+Plug 'Yggdroot/indentLine'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ervandew/supertab'
+Plug 'severin-lemaignan/vim-minimap'
+Plug 'djoshea/vim-autoread'
+Plug 'slim-template/vim-slim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'edkolev/tmuxline.vim'
+"
+" :PlugInstall      - Installs Plug plugins
+
+call plug#end()
+"""""""""""""""""""""""""""
+
+" disable bells
+autocmd! GUIEnter * set vb t_vb=
+
+" Do not make vim compatible with vi.
+set nocompatible
+
+" Do not create .swp files
+set noswapfile
+
+" Number the lines.
+set number
+
+" Show auto complete menus.
+set wildmenu
+
+" Make wildmenu behave like bash completion. Finding commands are so easy now.
+set wildmode=list:longest
+
+" Enable mouse pointing
+set mouse=a
+
+" ALWAYS spaces
+set expandtab
+
+" Fix backspace behavior
+set backspace=indent,eol,start
+
+" Use system clipboard
+set clipboard+=unnamed
+
+" Keep Undo history on buffer change
+set hidden
+
+" Reload files after change on Disk
+"set autoread
+"au CursorHold * checktime
+
+" Turn on syntax hightlighting.
+syntax enable
+syntax on
+
+"set nowrap
+set tabstop=2
+set shiftwidth=2
+set nocindent
+
+" Speed optimization
+set ttyfast
+set lazyredraw
+
+" Theme
+set background=dark
+"colorscheme papercolor
+colorscheme gruvbox
+
+" TrueColors only works in iTerm2
+set termguicolors
+
+" Airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled=1
+"let g:airline_theme='papercolor'
+let g:airline_theme='gruvbox'
+let g:airline_powerline_fonts=1
+let g:airline#extensions#branch#enabled=1
+
+" Indent Guides
+let g:indentLine_enabled=1
+let g:indentLine_color_term=235
+let g:indentLine_char='┆'
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
+
+" Start Minimap
+" autocmd VimEnter * Minimap
+
+" Delete buffer while keeping window layout (don't close buffer's windows).
+" Version 2008-11-18 from http://vim.wikia.com/wiki/VimTip165
+if v:version < 700 || exists('loaded_bclose') || &cp
+finish
+endif
+let loaded_bclose = 1
+if !exists('bclose_multiple')
+let bclose_multiple = 1
+endif
+
+" Display an error message.
+function! s:Warn(msg)
+  echohl ErrorMsg
+  echomsg a:msg
+  echohl NONE
+endfunction
+
+" Close buffer properly with NERDtree
+" http://stackoverflow.com/questions/1864394/vim-and-nerd-tree-closing-a-buffer-properly
+"
+" Command ':Bclose' executes ':bd' to delete buffer in current window.
+" The window will show the alternate buffer (Ctrl-^) if it exists,
+" or the previous buffer (:bp), or a blank buffer if no previous.
+" Command ':Bclose!' is the same, but executes ':bd!' (discard changes).
+" An optional argument can specify which buffer to close (name or number).
+function! s:Bclose(bang, buffer)
+if empty(a:buffer)
+let btarget = bufnr('%')
+elseif a:buffer =~ '^\d\+$'
+let btarget = bufnr(str2nr(a:buffer))
+else
+let btarget = bufnr(a:buffer)
+endif
+if btarget < 0
+call s:Warn('No matching buffer for '.a:buffer)
+return
+endif
+if empty(a:bang) && getbufvar(btarget, '&modified')
+call s:Warn('No write since last change for buffer '.btarget.' (use :Bclose!)')
+return
+endif
+" Numbers of windows that view target buffer which we will delete.
+let wnums = filter(range(1, winnr('$')), 'winbufnr(v:val) == btarget')
+if !g:bclose_multiple && len(wnums) > 1
+call s:Warn('Buffer is in multiple windows (use ":let bclose_multiple=1")')
+return
+endif
+let wcurrent = winnr()
+for w in wnums
+execute w.'wincmd w'
+let prevbuf = bufnr('#')
+if prevbuf > 0 && buflisted(prevbuf) && prevbuf != w
+buffer #
+else
+bprevious
+endif
+if btarget == bufnr('%')
+" Numbers of listed buffers which are not the target to be deleted.
+let blisted = filter(range(1, bufnr('$')), 'buflisted(v:val) && v:val !=
+btarget')
+" Listed, not target, and not displayed.
+let bhidden = filter(copy(blisted), 'bufwinnr(v:val) < 0')
+" Take the first buffer, if any (could be more intelligent).
+let bjump = (bhidden + blisted + [-1])[0]
+if bjump > 0
+execute 'buffer '.bjump
+else
+execute 'enew'.a:bang
+endif
+endif
+endfor
+execute 'bdelete'.a:bang.' '.btarget
+execute wcurrent.'wincmd w'
+endfunction
+command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose('<bang>','<args>')
+nnoremap <silent> <Leader>bd :Bclose<CR>
+nnoremap <silent> <Leader>bD :Bclose!<CR>
+
+" Chain vimgrep and copen
+augroup qf
+    autocmd!
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l*    cwindow
+    autocmd VimEnter        *     cwindow
+augroup END
+
+" Change cursor appearance depending on the current mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+""""""""""""""""""""""""""
+" Custom bindings
+""""""""""""""""""""""""""
+
+" Browse tabs/buffers
+nnoremap <C-m> :bnext<CR>
+nnoremap <C-n> :bprevious<CR>
+nnoremap <C-w> :bdelete<CR>
+
+
+" Map Control S for save
+noremap <silent> <C-S> :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S>  <C-O>:update<CR>
+
+" Toggle paste mode
+set pastetoggle=<F2>
+
+" Toggle no auto indent
+nnoremap <silent> <F8> :setl noai nocin nosi inde=<CR>
+
+" Comment block
+vnoremap <silent> <C-k> :Commentary<cr>
+
+" Close current buffer
+noremap <silent> <C-q> :Bclose!<CR>
+
+" Select all
+map <C-a> <esc>ggVG<CR>
+
+" ctrl-p for FZF
+noremap <C-p> :FZF<CR>
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+" Do not show text for insert
+set noshowmode
+
+" set showmatch' highlights the matching braces|brackets|parens when the cursor is on a bracket
+set showmatch
+
+" Minimap Visual
+let g:minimap_highlight='Visual'
+
+set modeline
+set ls=2
+set t_co=256
+
+" Disable vim-json quote concealing
+let g:vim_json_syntax_conceal = 0
+
+" Change IndentLine color
+let g:indentLine_color_term = 239
+
+" Disable auto commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" NERDTree Options
+" Automatically close NerdTree when you open a file
+let NERDTreeQuitOnOpen = 1
+" Automatically delete the buffer of the file you just deleted with NerdTree
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+" Toggle Nerdtree
+noremap <silent> <C-f> ::NERDTreeToggle<CR>
+
+" Tmuxline
+"let g:tmuxline_preset = {
+"      \'a'    : '#[fg=colour240,bg=colour254] #S #[fg=colour254,bg=colour24,nobold,nounderscore,noitalics] #(whoami)',
+"      \'x'    : '#[fg=colour31,bg=colour24,nobold,nounderscore,noitalics]#[fg=colour254,bg=colour31] %b-%d-%Y%l:%M:%S%p %Z:%z #[fg=colour254,bg=colour31,nobold,nounderscore,noitalics]#[fg=colour240,bg=colour254] #h'}
