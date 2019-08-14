@@ -1,0 +1,90 @@
+import os
+import sys
+import socket
+
+
+#source-bash --login True "echo loading xonsh foreign shell" .bashrc
+source-bash ~/.bashrc
+
+# Load vi mode disables most ctrl commands but allows shell to act like vi
+#xontrib load prompt_vi_mode
+#$VI_MODE = True
+#Display vi mode for Xonsh on right prompt
+#$RIGHT_PROMPT = '{BACKGROUND_GREEN}{vi_mode:[{}]}'
+# Xontribs
+xontrib load bashisms
+xontrib load jedi
+xontrib load coreutils
+xontrib load distributed
+xontrib load vox
+
+$PAGER='less'
+#$EDITOR='/usr/local/bin/vim'
+
+# Dynamically change cwd width in Prompt.  This will help with the new line
+# dots.  Otherwise change 'cwd' in PROMPT to 'cwd_base'
+#$DYNAMIC_CWD_WIDTH='15%'
+
+$PATH = ['/usr/local/bin', '/usr/bin', '/bin', '/usr/local/sbin', '/usr/sbin', '/sbin', '/opt/X11/bin', '/usr/local/MacGPG2/bin', '/Applications/Wireshark.app/Contents/MacOS', '/usr/local/opt/go/libexec/bin', '/Users/' + $USER + '/go/bin']
+$HOST = socket.gethostname()
+
+# Let Xonsh select the best shell type
+$SHELL_TYPE='best'
+$COMPLETIONS_CONFIRM = True
+$AUTO_SUGGEST = True
+#$XONSH_COLOR_STYLE='monokai'
+$XONSH_COLOR_STYLE='native'
+
+# Aliases
+#aliases['ccat'] = '/usr/local/bin/pygmentize -O style=monokai -f 256 -g'
+aliases['cat'] = 'bat'
+aliases['grep'] = 'grep --color=auto'
+aliases['egrep'] = 'egrep --color=auto'
+aliases['fgrep'] = 'fgrep --color=auto'
+aliases['l'] = 'ls -alh'
+aliases['pip'] = '/usr/local/bin/pip3'
+aliases['python'] = '/usr/local/bin/python3'
+aliases['top'] = '/usr/local/bin/htop'
+aliases['vi'] = '/usr/local/bin/vim'
+
+# Make man work in xonsh
+aliases.pop('man')
+
+
+# ls colors
+$LS_COLORS='rs=0:di=01;36:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:'
+
+# Some customization options
+$MULTILINE_PROMPT = '....'
+#$XONSH_SHOW_TRACEBACK = True
+#$XONSH_STORE_STDOUT = True
+
+# PROMPT
+$PROMPT = ('{env_name:{}}' +
+           '{BOLD_GREEN}{user}@{hostname}' +
+           '{BOLD_CYAN} {cwd_base}{branch_color} ' +
+           '{curr_branch:[{}]}{NO_COLOR}' +
+           '{BOLD_CYAN}{prompt_end}{NO_COLOR} ')
+
+
+# This does not appear to be working at the moment
+# Coloured man page support
+# using 'less' env vars (format is '\E[<brightness>;<colour>m')
+$LESS_TERMCAP_mb = "\033[01;31m"     # begin blinking
+$LESS_TERMCAP_md = "\033[01;31m"     # begin bold
+$LESS_TERMCAP_me = "\033[0m"         # end mode
+$LESS_TERMCAP_so = "\033[01;44;36m"  # begin standout-mode (bottom of screen)
+$LESS_TERMCAP_se = "\033[0m"         # end standout-mode
+$LESS_TERMCAP_us = "\033[00;36m"     # begin underline
+$LESS_TERMCAP_ue = "\033[0m"         # end underline
+
+# Go env
+$GOPATH="$HOME/go"
+$GOROOT="/usr/local/opt/go/libexec"
+
+# IBM DB Driver
+$IBM_DB_HOME="/Applications/dsdriver"
+
+del os
+del sys
+del socket
