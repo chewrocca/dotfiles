@@ -1,0 +1,41 @@
+[alias]
+  showtool = "!f() { git difftool $1^ $1; }; f"
+  added = difftool --cached
+[color]
+  ui = true
+[color "branch"]
+  current = yellow bold
+  local = green bold
+  remote = cyan bold
+[commit]
+  template = ~/.config/git/git_config_msg.txt
+[core]
+  autocrlf = input
+  editor = vim
+  excludesfile = ~/.config/git/ignore
+  ignorecase = false
+  pager = less -r
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[diff]
+  tool = icdiff
+[difftool]
+  prompt = false
+[difftool "icdiff"]
+  cmd = /usr/local/bin/icdiff --highlight --line-numbers $LOCAL $REMOTE
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+[icdiff]
+  options = --highlight --line-numbers
+[pager]
+  difftool = true
+[pager]
+  diff = diff-so-fancy | less --tabs=1,5 -RFX
+  show = diff-so-fancy | less --tabs=1,5 -RFX
+[user]
+  name = Matt Fine
+  email = 17680862+chewrocca@users.noreply.github.com
+[web]
+  browser = safari
