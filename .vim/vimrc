@@ -1,5 +1,5 @@
 " Set shell
-set shell=/usr/local/bin/zsh
+set shell=zsh
 set encoding=utf-8
 
 " Install Plug if not already installed
