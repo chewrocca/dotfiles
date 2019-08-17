@@ -2,7 +2,7 @@
 ZSH_DOTENV_FILE=.dotenv
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:$HOME/go/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/$USER/.oh-my-zsh"
@@ -123,7 +123,6 @@ alias diff="icdiff --line-numbers"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias pping="prettyping --nolegend"
 alias preview="fzf --height 40% --preview 'if file -i {}|grep -q binary; then file -b {}; else bat --color \"always\" {}; fi'"
-alias python="/usr/local/bin/python3"
 alias top="htop"
 alias tree="tree -a -I '.git'"
 alias vi="vim"
