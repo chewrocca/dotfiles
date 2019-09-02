@@ -5,7 +5,7 @@ ZSH_DOTENV_FILE=.dotenv
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:$HOME/go/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/$USER/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -194,7 +194,7 @@ OS_ICON='\uF179'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir virtualenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time dir_writable ip custom_wifi_signal ram battery load background_jobs)
 
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 
 #POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %m/%d/%y}"
 POWERLEVEL9K_TIME_FORMAT="\uf017 %t %D{\uf073 %m/%d/%y}"
