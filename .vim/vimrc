@@ -2,6 +2,10 @@
 set shell=zsh
 set encoding=utf-8
 
+" Start NERDTree if no file was specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " Install Plug if not already installed
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -162,6 +166,7 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=0
 let g:syntastic_check_on_wq=0
+let g:syntastic_yaml_checkers = ['yamllint']
 
 " Start Minimap
 " autocmd VimEnter * Minimap
@@ -300,7 +305,9 @@ set noshowmode
 set showmatch
 
 " Minimap Visual
-let g:minimap_highlight='Visual'
+" let g:minimap_highlight='Visual'
+" Toggle Minimap with "\m"
+let g:minimap_toggle='<leader>m'
 
 set modeline
 set ls=2
