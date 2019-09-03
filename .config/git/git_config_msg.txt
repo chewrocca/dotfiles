@@ -1,7 +1,11 @@
 # If applied, this commit will...
+# e.g. [close(d,s), fix(ed/es), resolve(d,s)]
+# e.g "fixes #<storyID> | description of fix"
 
-# Why is this change needed?
-
-# How does it address the issue?
 
 # Provide links to any relevant tickets, articles or other resources
+# e.g "https://www.pivotaltracker.com/story/show/<storyID>"
+
+
+# References: https://help.github.com/en/articles/closing-issues-using-keywords
+# https://www.pivotaltracker.com/help/articles/github_integration
