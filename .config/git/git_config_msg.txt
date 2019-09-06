@@ -1,6 +1,7 @@
 # If applied, this commit will...
 # e.g. [close(d,s), fix(ed/es), resolve(d,s)]
-# e.g "fixes #<storyID> | description of fix"
+# e.g "fixes <GitHubIssue#> | description of fix"
+# [(Finishes|Fixes|Delivers) #TRACKER_STORY_ID]
 
 
 # Provide links to any relevant tickets, articles or other resources
