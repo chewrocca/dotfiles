@@ -116,7 +116,6 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias cat="bat --paging=never --decorations=never --theme="DarkNeon""
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
-alias diskusage="ncdu --color dark -rr"
 alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias help="tldr"
 alias diff="icdiff --line-numbers"
