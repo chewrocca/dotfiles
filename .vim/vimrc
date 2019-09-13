@@ -340,8 +340,8 @@ noremap <silent> <C-f> ::NERDTreeToggle<CR>
 inoremap ii <esc>
 
 " incremental search and highlighting
-set incsearch
-set hlsearch
+"set incsearch
+"set hlsearch
 
 " Tmuxline
 "let g:tmuxline_preset = {
