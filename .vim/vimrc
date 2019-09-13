@@ -123,6 +123,8 @@ set hidden
 " Reload files after change on Disk
 "set autoread
 "au CursorHold * checktime
+" Highlight current line
+set cursorline
 
 " Turn on syntax hightlighting.
 syntax enable
@@ -333,6 +335,13 @@ let NERDTreeDirArrows = 1
 
 " Toggle Nerdtree
 noremap <silent> <C-f> ::NERDTreeToggle<CR>
+
+" Press 'ii' quickly to <esc>
+inoremap ii <esc>
+
+" incremental search and highlighting
+set incsearch
+set hlsearch
 
 " Tmuxline
 "let g:tmuxline_preset = {
