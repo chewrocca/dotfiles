@@ -1,12 +1,6 @@
 # If applied, this commit will...
 # e.g. GitHub issues [close(d,s), fix(ed/es), resolve(d,s)]
 # e.g "fixes <GitHubIssue#> | description of fix"
-# PivotalTracker [(Finishes|Fixes|Delivers) #TRACKER_STORY_ID]
-
-
-# Provide links to any relevant tickets, articles or other resources
-# e.g "https://www.pivotaltracker.com/story/show/<storyID>"
 
 
 # References: https://help.github.com/en/articles/closing-issues-using-keywords
-# https://www.pivotaltracker.com/help/articles/github_integration

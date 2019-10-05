@@ -1,6 +1,7 @@
 [alias]
   showtool = "!f() { git difftool $1^ $1; }; f"
   added = difftool --cached
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [color]
   ui = true
 [color "branch"]
@@ -34,8 +35,9 @@
 [pager]
   diff = diff-so-fancy | less --tabs=1,5 -RFX
   show = diff-so-fancy | less --tabs=1,5 -RFX
+  branch = false
 [user]
-	name = Matt Fine
-	email = 17680862+chewrocca@users.noreply.github.com
+  name = Matt Fine
+  email = 17680862+chewrocca@users.noreply.github.com
 [web]
   browser = safari
