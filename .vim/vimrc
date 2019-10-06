@@ -339,6 +339,8 @@ noremap <silent> <C-f> ::NERDTreeToggle<CR>
 " Press 'ii' quickly to <esc>
 inoremap ii <esc>
 
+" gitcommit spell check and line wrap
+autocmd Filetype gitcommit setlocal spell textwidth=72
 " incremental search and highlighting
 "set incsearch
 "set hlsearch

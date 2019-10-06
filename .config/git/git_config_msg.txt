@@ -1,3 +1,7 @@
+# Title 50 characters or less
+
+# Blank line
+
 # If applied, this commit will...
 # e.g. GitHub issues [close(d,s), fix(ed/es), resolve(d,s)]
 # e.g "fixes <GitHubIssue#> | description of fix"
