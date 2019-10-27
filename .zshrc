@@ -120,8 +120,10 @@ alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias help="tldr"
 alias diff="icdiff --line-numbers"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+alias pip="/usr/bin/pip3"
 alias pping="prettyping --nolegend"
 alias preview="fzf --height 40% --preview 'if file -i {}|grep -q binary; then file -b {}; else bat --color \"always\" {}; fi'"
+alias python=/usr/local/bin/python3
 alias top="htop"
 alias tree="tree -a -I '.git'"
 alias vi="vim"
