@@ -75,6 +75,7 @@ plugins=(
   docker-compose
   dotenv
   git
+  osx
   virtualenv
   zsh-syntax-highlighting
 )
@@ -215,3 +216,5 @@ POWERLEVEL9K_HOME_SUB_ICON='\uF07C'
 POWERLEVEL9K_FOLDER_ICON='\uF115'
 POWERLEVEL9K_STATUS_VERBOSE=true
 POWERLEVEL9K_STATUS_CROSS=true
+
+
