@@ -344,8 +344,7 @@ inoremap ii <esc>
 autocmd Filetype gitcommit setlocal textwidth=72
 " enable spell check
 set spell
-" Dictionary
-set dictionary=/usr/share/dict/words
+set spelllang=en
 " custom-dictionary words (version controlled).
 " local-dictionary words (not version controlled)
 set spellfile=~/.vim/custom-dictionary.utf-8.add,~/.vim/local-dictionary.utf-8.add
