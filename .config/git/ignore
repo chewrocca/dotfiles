@@ -29,3 +29,7 @@ Temporary Items
 # env files
 .dotenv
 .env
+
+# Dictionary
+local-dictionary.utf-8.add
+local-dictionary.utf-8.add.spl

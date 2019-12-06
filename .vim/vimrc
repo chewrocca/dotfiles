@@ -341,12 +341,14 @@ noremap <silent> <C-f> ::NERDTreeToggle<CR>
 inoremap ii <esc>
 
 " gitcommit spell check and line wrap
-autocmd Filetype gitcommit setlocal spell textwidth=72
-" incremental search and highlighting
-"set incsearch
-"set hlsearch
+autocmd Filetype gitcommit setlocal textwidth=72
+" enable spell check
+set spell
+" Dictionary
+set dictionary=/usr/share/dict/words
+" custom-dictionary words (version controlled).
+" local-dictionary words (not version controlled)
+set spellfile=~/.vim/custom-dictionary.utf-8.add,~/.vim/local-dictionary.utf-8.add
+" remap zG to add words to local-dictionary
+nnoremap zG 2zg
 
-" Tmuxline
-"let g:tmuxline_preset = {
-"      \'a'    : '#[fg=colour240,bg=colour254] #S #[fg=colour254,bg=colour24,nobold,nounderscore,noitalics] #(whoami)',
-"      \'x'    : '#[fg=colour31,bg=colour24,nobold,nounderscore,noitalics]#[fg=colour254,bg=colour31] %b-%d-%Y%l:%M:%S%p %Z:%z #[fg=colour254,bg=colour31,nobold,nounderscore,noitalics]#[fg=colour240,bg=colour254] #h'}
