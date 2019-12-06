@@ -1,5 +1,5 @@
 # in ~/.zshrc, before Oh My Zsh is sourced:
-ZSH_DOTENV_FILE=.dotenv
+ZSH_DOTENV_FILE=~/.dotenv
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:$HOME/go/bin:$PATH
