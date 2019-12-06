@@ -156,6 +156,9 @@ let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled=1
 
+" MacVim font
+set guifont=Menlo\ Regular:h14
+
 " Indent Guides
 let g:indentLine_enabled=1
 let g:indentLine_color_term=235

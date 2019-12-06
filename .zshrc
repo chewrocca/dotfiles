@@ -17,6 +17,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 export TERM="xterm-256color"
 
+export EDITOR="vim"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -149,8 +151,6 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 autoload -U compinit compdef
 compinit
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 #
 POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zsh_wifi_signal"
 POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_BACKGROUND="white"
@@ -217,4 +217,38 @@ POWERLEVEL9K_FOLDER_ICON='\uF115'
 POWERLEVEL9K_STATUS_VERBOSE=true
 POWERLEVEL9K_STATUS_CROSS=true
 
+eval "$(fasd --init auto)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fasd & fzf - jump using `fasd` if argument is given, filter output of `fasd`
+# using `fzf` otherwise.
+unalias j 2>/dev/null
+j() {
+    [ $# -gt 0 ] && fasd_cd -d "$*" && return
+    local dir
+    dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+}
+
+# fasd & fzf - use $EDITOR to edit file. Pick best matched file using `fasd`
+# if argument given, else use `fzf` to filter `fasd` output.
+unalias e 2>/dev/null
+e() {
+    [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return
+    local file
+    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && ${EDITOR} "${file}" || return 1
+}
+
+# fasd & fzf - open finder. If argument given, use `fasd` to pick the best match
+# else use `fzf` to select from `fasd` results.
+unalias o 2>/dev/null
+o() {
+    [ $# -gt 0 ] && fasd -a -e open "$*" && return
+    local res
+    res="$(fasd -Rla "$1" | fzf -1 -0 --no-sort +m)"
+    if [[ -d "${res}" ]]; then
+       open "${res}"
+    else
+       open "$(dirname "$res")"
+    fi
+}
 
