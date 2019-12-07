@@ -13,55 +13,23 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-""""""""""""""""""
-" Vundle Plugins "
-""""""""""""""""""
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'chr4/nginx.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'elzr/vim-json'
-Plugin 'google/vim-jsonnet'
-Plugin 'morhetz/gruvbox'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'fatih/vim-go'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'cespare/vim-toml'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-
 """"""""""""""""
 " Plug Plugins "
 """"""""""""""""
 call plug#begin('~/.vim/plugged')
-
+Plug 'elzr/vim-json'
+Plug 'google/vim-jsonnet'
+Plug 'morhetz/gruvbox'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'VundleVim/Vundle.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'fatih/vim-go'
+Plug 'Valloric/YouCompleteMe'
+Plug 'vim-syntastic/syntastic'
+Plug 'cespare/vim-toml'
+Plug 'flazz/vim-colorschemes'
+Plug 'godlygeek/tabular'
+Plug 'chr4/nginx.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'lfv89/vim-interestingwords'
 Plug 'tpope/vim-fugitive'
@@ -83,7 +51,10 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'edkolev/tmuxline.vim'
 "
-" :PlugInstall      - Installs Plug plugins
+" :PlugInstall      - Installs plugins
+" :PlugUpdate       - Install or update plugins
+" :PlugUpgrade      - Upgrade Plug itself
+" :PlugClean[!]	    - Remove unlisted plugins (bang version will clean without prompt)
 
 call plug#end()
 """""""""""""""""""""""""""
