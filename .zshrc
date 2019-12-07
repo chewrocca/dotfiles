@@ -79,13 +79,12 @@ plugins=(
   git
   osx
   virtualenv
+  zsh-autosuggestions
+  zsh-completions
   zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-# zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 
 # User configuration
 
@@ -132,6 +131,7 @@ alias tree="tree -a -I '.git'"
 alias vi="vim"
 
 autoload -U +X bashcompinit && bashcompinit
+autoload -U compinit && compinit
 complete -o nospace -C /usr/local/bin/vault vault
 
 #If zsh installed, gcloud may not work, thus add the following lines to .zshrc file (aka on Terminal run $ vi  /.zshrc)
@@ -147,10 +147,6 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 
 #gcloud zsh completion
 #fpath=(/Users/$USER/gcloud-zsh-completion/src $fpath)
-
-autoload -U compinit compdef
-compinit
-
 
 eval "$(fasd --init auto)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
