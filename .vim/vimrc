@@ -13,9 +13,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-""""""""""""""""
-" Plug Plugins "
-""""""""""""""""
+""""""""""""""""""""
+" Vim-Plug Plugins "
+""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'elzr/vim-json'
 Plug 'google/vim-jsonnet'
@@ -24,7 +24,7 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'VundleVim/Vundle.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go'
-Plug 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-syntastic/syntastic'
 Plug 'cespare/vim-toml'
 Plug 'flazz/vim-colorschemes'
@@ -113,7 +113,6 @@ set lazyredraw
 
 " Theme
 set background=dark
-"colorscheme papercolor
 silent! colorscheme gruvbox
 
 " TrueColors only works in iTerm2
@@ -122,7 +121,6 @@ set termguicolors
 " Airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
-"let g:airline_theme='papercolor'
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled=1
@@ -139,15 +137,11 @@ let g:indentLine_char='┆'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=0
 let g:syntastic_check_on_wq=0
 let g:syntastic_yaml_checkers = ['yamllint']
-
-" Start Minimap
-" autocmd VimEnter * Minimap
 
 " Delete buffer while keeping window layout (don't close buffer's windows).
 " Version 2008-11-18 from http://vim.wikia.com/wiki/VimTip165
@@ -248,7 +242,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 nnoremap <C-m> :bnext<CR>
 nnoremap <C-n> :bprevious<CR>
 nnoremap <C-w> :bdelete<CR>
-
 
 " Map Control S for save
 noremap <silent> <C-S> :update<CR>
