@@ -114,7 +114,7 @@ set lazyredraw
 " Theme
 set background=dark
 "colorscheme papercolor
-colorscheme gruvbox
+silent! colorscheme gruvbox
 
 " TrueColors only works in iTerm2
 set termguicolors
