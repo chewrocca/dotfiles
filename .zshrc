@@ -134,19 +134,6 @@ autoload -U +X bashcompinit && bashcompinit
 autoload -U compinit && compinit
 complete -o nospace -C /usr/local/bin/vault vault
 
-#If zsh installed, gcloud may not work, thus add the following lines to .zshrc file (aka on Terminal run $ vi  /.zshrc)
-#zsh install: https://github.com/robbyrussell/oh-my-zsh/
-#gcloud sdk install: https://cloud.google.com/sdk/
-#gcloud zsh completion install: https://github.com/littleq0903/gcloud-zsh-completion
-
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-
-#gcloud
-#export PATH="/Users/$USER/google-cloud-sdk/bin:$PATH"
-
-#gcloud zsh completion
-#fpath=(/Users/$USER/gcloud-zsh-completion/src $fpath)
 
 eval "$(fasd --init auto)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
