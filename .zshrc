@@ -18,6 +18,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 export TERM="xterm-256color"
 
 export EDITOR="vim"
+export MYVIMRC="~/.vim/vimrc"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
