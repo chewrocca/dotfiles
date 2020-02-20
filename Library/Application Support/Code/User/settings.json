@@ -1,0 +1,43 @@
+{
+    "team.showWelcomeMessage": false,
+    "workbench.sideBar.location": "left",
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": false,
+    "workbench.colorTheme": "Monokai",
+    "python.jediEnabled": false,
+    "python.linting.pylintEnabled": true,
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "git.autofetch": true,
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "workbench.iconTheme": "material-icon-theme",
+    "vim.insertModeKeyBindings": [
+    {
+      "before": ["i", "i"],
+      "after": ["<Esc>"]
+    }
+  ],
+    "vs-kubernetes": {
+        "vs-kubernetes.helm-path": "$HOME/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+        "vs-kubernetes.minikube-path": "$HOME/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+        "vs-kubernetes.draft-path": "$HOME/.vs-kubernetes/tools/draft/darwin-amd64/draft"
+    },
+    "window.zoomLevel": 1,
+    "go.useLanguageServer": true,
+    "go.formatTool": "gofmt",
+    "git.confirmSync": false,
+    "terraform.indexing": {
+      "enabled": false,
+      "liveIndexing": false,
+      "delay": 500,
+      "exclude": [
+        ".terraform/**/*",
+        "**/.terraform/**/*"
+      ]
+    },
+    "terraform.languageServer": {
+      "enabled": true,
+      "args": []
+    }
+}

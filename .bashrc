@@ -156,3 +156,5 @@ source <(kubectl completion bash)
 complete -C /usr/local/bin/vault vault
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+complete -C /usr/local/bin/terraform terraform
