@@ -3,7 +3,7 @@
     "workbench.sideBar.location": "left",
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Visual Studio Dark",
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": true,
     "atomKeymap.promptV3Features": true,
@@ -37,7 +37,13 @@
       ]
     },
     "terraform.languageServer": {
-      "enabled": true,
-      "args": []
+      "external": true,
+      "args": [
+        "serve"
+      ]
+    },
+    "theme-by-language.themes": {
+      "*": "Visual Studio Dark",
+      "markdown": "Visual Studio Light"
     }
 }
