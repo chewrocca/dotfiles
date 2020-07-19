@@ -3,7 +3,7 @@
     "workbench.sideBar.location": "left",
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
-    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Visual Studio Light",
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": true,
     "atomKeymap.promptV3Features": true,
