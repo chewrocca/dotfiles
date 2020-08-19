@@ -71,10 +71,19 @@
   # Right prompt on the last prompt line (where you are typing your commands) gets
   # automatically hidden when the input line reaches it. Right prompt above the
   # last prompt line gets hidden if it would overlap with left prompt.
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time dir_writable ip custom_wifi_signal ram battery load background_jobs)
-  #typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+  typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   #  # =========================[ Line #1 ]=========================
-  #  status                  # exit code of the last command
+  aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+  gcloud                  # google cloud cli account and project (https://cloud.google.com/)
+  status                  # exit code of the last command
+  time                    # current time
+  dir_writable
+  ip                      # ip address and bandwidth usage for a specified network interface
+  custom_wifi_signal
+  ram                     # free RAM
+  battery                 # internal battery
+  load                    # CPU load
+  background_jobs
   #  command_execution_time  # duration of the last command
   #  background_jobs         # presence of background jobs
   #  direnv                  # direnv status (https://direnv.net/)
@@ -104,10 +113,8 @@
   #  haskell_stack           # haskell version from stack (https://haskellstack.org/)
   #  kubecontext             # current kubernetes context (https://kubernetes.io/)
   #  terraform               # terraform workspace (https://www.terraform.io)
-  #  aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
   #  aws_eb_env              # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
   #  azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
-  #  gcloud                  # google cloud cli account and project (https://cloud.google.com/)
   #  google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
   #  context                 # user@hostname
   #  nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
@@ -118,23 +125,18 @@
   #  nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
   #  vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
   #  # vpn_ip                # virtual private network indicator
-  #  # load                  # CPU load
   #  # disk_usage            # disk usage
-  #  # ram                   # free RAM
   #  # swap                  # used swap
   #  todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
   #  timewarrior             # timewarrior tracking status (https://timewarrior.net/)
   #  taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
-  #  time                    # current time
   #  # =========================[ Line #2 ]=========================
   #  newline
-  #  # ip                    # ip address and bandwidth usage for a specified network interface
   #  # public_ip             # public IP address
   #  # proxy                 # system-wide http/https/ftp proxy
-  #  # battery               # internal battery
   #  # wifi                  # wifi speed
   #  # example               # example user-defined segment (see prompt_example function below)
-  #)
+  )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
   typeset -g POWERLEVEL9K_MODE=nerdfont-complete
