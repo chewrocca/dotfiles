@@ -29,6 +29,7 @@ Temporary Items
 # env files
 .dotenv
 .env
+.envrc
 
 # Dictionary
 local-dictionary.utf-8.add
