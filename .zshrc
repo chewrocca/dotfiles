@@ -90,6 +90,7 @@ plugins=(
   docker
   docker-compose
   dotenv
+  fzf
   git
   osx
   terraform
@@ -185,3 +186,6 @@ o() {
 }
 
 complete -o nospace -C /usr/local/bin/terraform terraform
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
