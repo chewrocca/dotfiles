@@ -189,3 +189,7 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+if [ $(command -v direnv) ]; then 
+  eval "$(direnv hook zsh)"
+fi
