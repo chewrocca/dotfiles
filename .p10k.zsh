@@ -30,11 +30,11 @@
   # Zsh >= 5.1 is required.
   autoload -Uz is-at-least && is-at-least 5.1 || return
 
-  typeset -g POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zsh_wifi_signal"
+  typeset -g POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zshWifiSignal"
   typeset -g POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_BACKGROUND="white"
   typeset -g POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_FOREGROUND="black"
 
-  zsh_wifi_signal(){
+  zshWifiSignal(){
         local output=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I)
         local airport=$(echo $output | grep 'AirPort' | awk -F': ' '{print $2}')
 
@@ -53,10 +53,10 @@
         fi
 }
 
-
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
+    custom_aws_prompt
     os_icon                 # os identifier
     context
     dir                     # current directory
@@ -75,6 +75,7 @@
   #  # =========================[ Line #1 ]=========================
   aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
   gcloud                  # google cloud cli account and project (https://cloud.google.com/)
+  direnv                  # direnv status (https://direnv.net/)
   status                  # exit code of the last command
   time                    # current time
   dir_writable
@@ -86,7 +87,6 @@
   background_jobs
   #  command_execution_time  # duration of the last command
   #  background_jobs         # presence of background jobs
-  #  direnv                  # direnv status (https://direnv.net/)
   #  asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
   #  virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
   #  anaconda                # conda environment (https://conda.io/)
@@ -1683,4 +1683,3 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
-
