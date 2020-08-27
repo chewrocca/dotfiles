@@ -122,29 +122,6 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#alias ccat="/usr/local/bin/pygmentize -O style=monokai -f 256 -g"
-alias cat="bat --paging=never --decorations=never --theme="DarkNeon""
-alias dcu='docker-compose up'
-alias dcd='docker-compose down'
-alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias help="tldr"
-alias diff="icdiff --line-numbers"
-alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
-alias pip="/usr/bin/pip3"
-alias pping="prettyping --nolegend"
-alias preview="fzf --height 40% --preview 'if file -i {}|grep -q binary; then file -b {}; else bat --color \"always\" {}; fi'"
-alias top="htop"
-alias tree="tree -a -I '.git'"
-alias vi="vim"
-
 autoload -U +X bashcompinit && bashcompinit
 autoload -U compinit && compinit
 
@@ -189,6 +166,8 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# Aliases
+source $HOME/.aliases
 
 if [ $(command -v direnv) ]; then 
   eval "$(direnv hook zsh)"
