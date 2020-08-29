@@ -52,6 +52,7 @@ Plug 'slim-template/vim-slim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 "
 " :PlugInstall      - Installs plugins
 " :PlugUpdate       - Install or update plugins
