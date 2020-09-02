@@ -172,3 +172,5 @@ source $HOME/.aliases
 if [ $(command -v direnv) ]; then 
   eval "$(direnv hook zsh)"
 fi
+
+complete -o nospace -C /usr/local/bin/vault vault
