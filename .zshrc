@@ -15,21 +15,20 @@ ZSH_DOTENV_PROMPT=false
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export GOPATH=$HOME/go
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:$GOPATH/bin:$PATH
+export TERM="xterm-256color"
+export EDITOR="vim"
+export MYVIMRC="~/.vim/vimrc"
 
+# oh-my-zsh section
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+#export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-export TERM="xterm-256color"
-
-export EDITOR="vim"
-export MYVIMRC="~/.vim/vimrc"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -83,24 +82,10 @@ export MYVIMRC="~/.vim/vimrc"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  aws
-  brew
-  colored-man-pages
-  docker
-  docker-compose
-  dotenv
-  fzf
-  git
-  osx
-  terraform
-  virtualenv
-  zsh-autosuggestions
-  zsh-completions
-  zsh-syntax-highlighting
-)
+#plugins=(
+#)
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -169,8 +154,46 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Aliases
 source $HOME/.aliases
 
-if [ $(command -v direnv) ]; then 
+if [ $(command -v direnv) ]; then
   eval "$(direnv hook zsh)"
 fi
+
+# Zplug Section
+
+if [[ ! -d ~/.zplug ]];then
+    git clone https://github.com/zplug/zplug.git ~/.zplug
+fi
+
+source ~/.zplug/init.zsh
+
+# Supports oh-my-zsh plugins and the like
+zplug "plugins/aws",                       from:oh-my-zsh
+zplug "plugins/brew",                      from:oh-my-zsh
+zplug "plugins/colored-man-pages",         from:oh-my-zsh
+zplug "plugins/docker",                    from:oh-my-zsh
+zplug "plugins/docker-compose",            from:oh-my-zsh
+zplug "plugins/dotenv",                    from:oh-my-zsh
+zplug "plugins/fzf",                       from:oh-my-zsh
+zplug "plugins/git",                       from:oh-my-zsh
+zplug "plugins/osx",                       from:oh-my-zsh
+zplug "plugins/terraform",                 from:oh-my-zsh
+zplug "plugins/virtualenv",                from:oh-my-zsh
+zplug "zsh-users/zsh-autosuggestions",     defer:2
+zplug "zsh-users/zsh-completions",         defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "Aloxaf/fzf-tab",                    defer:3
+zplug "romkatv/powerlevel10k",             as:theme
+
+# zplug check returns true if all packages are installed
+# Therefore, when it returns false, run zplug install
+if ! zplug check; then
+    zplug install
+fi
+
+# source plugins and add commands to the PATH
+zplug load
+
+# or for everything
+#zstyle ':completion:*' fzf-search-display true
 
 complete -o nospace -C /usr/local/bin/vault vault
