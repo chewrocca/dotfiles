@@ -183,6 +183,7 @@ zplug "zsh-users/zsh-completions",         defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "Aloxaf/fzf-tab",                    defer:3
 zplug "romkatv/powerlevel10k",             as:theme
+zplug "robbyrussell/oh-my-zsh",            as:plugin, use:"lib/*.zsh"
 
 # zplug check returns true if all packages are installed
 # Therefore, when it returns false, run zplug install
