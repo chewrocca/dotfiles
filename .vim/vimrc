@@ -114,9 +114,23 @@ set nocindent
 set ttyfast
 set lazyredraw
 
-" Theme
-set background=dark
-silent! colorscheme gruvbox
+" Colorscheme
+if $ITERM_PROFILE == "GruvBoxLight"
+    set background=light
+    silent! colorscheme gruvbox
+  elseif $ITERM_PROFILE == "Material"
+      set background=dark
+      silent! colorscheme material
+  elseif $ITERM_PROFILE == "SolarizedLight"
+      set background=light
+      silent! colorscheme solarized8_light_flat
+  elseif $ITERM_PROFILE == "SolarizedDark"
+      set background=dark
+      silent! colorscheme solarized8_dark_flat
+else
+    set background=dark
+    silent! colorscheme gruvbox
+endif
 
 " TrueColors only works in iTerm2
 set termguicolors

@@ -194,6 +194,8 @@ fi
 # source plugins and add commands to the PATH
 zplug load
 
+bindkey '^T' toggle-fzf-tab
+
 # or for everything
 #zstyle ':completion:*' fzf-search-display true
 
