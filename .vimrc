@@ -465,5 +465,8 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" Toggle Relative Numberlines
+nnoremap <silent> <C-n> :set relativenumber!<cr>
+
 " open splits below
 set splitbelow
