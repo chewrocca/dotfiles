@@ -135,6 +135,12 @@ endif
 " TrueColors only works in iTerm2
 set termguicolors
 
+" Vim transparent
+hi Normal guibg=NONE ctermbg=NONE
+
+" Line length marker
+set colorcolumn=80
+
 " Airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
