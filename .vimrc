@@ -17,6 +17,7 @@ endif
 " Vim-Plug Plugins "
 """"""""""""""""""""
 call plug#begin('~/.vim/plugged')
+Plug 'cormacrelf/vim-colors-github'
 Plug 'hashivim/vim-terraform'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'elzr/vim-json'
@@ -114,6 +115,7 @@ set nocindent
 set ttyfast
 set lazyredraw
 
+
 " Colorscheme
 if $ITERM_PROFILE == "GruvBoxLight"
     set background=light
@@ -121,14 +123,24 @@ if $ITERM_PROFILE == "GruvBoxLight"
   elseif $ITERM_PROFILE == "Material"
       set background=dark
       silent! colorscheme material
+  elseif $ITERM_PROFILE == "GitHub Light"
+      set background=light
+      silent! colorscheme github
+      let g:airline_theme='github'
+      " use a slightly darker background, like GitHub inline code blocks
+      let g:github_colors_soft = 1
   elseif $ITERM_PROFILE == "SolarizedLight"
       set background=light
       silent! colorscheme solarized8_light_flat
+      let g:airline_theme='solarized'
   elseif $ITERM_PROFILE == "SolarizedDark"
       set background=dark
       silent! colorscheme solarized8_dark_flat
+      let g:airline_theme='solarized'
+
 else
     set background=dark
+    let g:airline_theme='gruvbox'
     silent! colorscheme gruvbox
 endif
 
@@ -144,7 +156,6 @@ set colorcolumn=80
 " Airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled=1
 
