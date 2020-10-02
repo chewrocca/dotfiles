@@ -27,7 +27,6 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'VundleVim/Vundle.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go'
-"Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-syntastic/syntastic'
 Plug 'cespare/vim-toml'
 Plug 'flazz/vim-colorschemes'
