@@ -41,3 +41,5 @@
   email = 17680862+chewrocca@users.noreply.github.com
 [web]
   browser = safari
+[pull]
+	ff = only
