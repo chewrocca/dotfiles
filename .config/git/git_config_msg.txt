@@ -8,3 +8,4 @@
 
 
 # References: https://help.github.com/en/articles/closing-issues-using-keywords
+# https://support.atlassian.com/bitbucket-cloud/docs/use-smart-commits/
