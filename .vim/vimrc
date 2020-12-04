@@ -316,7 +316,6 @@ let g:minimap_toggle='<leader>m'
 
 set modeline
 set ls=2
-set t_co=256
 
 " Disable vim-json quote concealing
 let g:vim_json_syntax_conceal = 0
