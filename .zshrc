@@ -113,7 +113,6 @@ autoload -U compinit && compinit
 complete -o nospace -C /usr/local/bin/vault vault
 
 eval "$(fasd --init auto)"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fasd & fzf - jump using `fasd` if argument is given, filter output of `fasd`
 # using `fzf` otherwise.
@@ -194,9 +193,9 @@ fi
 # source plugins and add commands to the PATH
 zplug load
 
-bindkey '^T' toggle-fzf-tab
-
 # or for everything
 #zstyle ':completion:*' fzf-search-display true
 
 complete -o nospace -C /usr/local/bin/vault vault
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
