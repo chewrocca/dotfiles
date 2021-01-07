@@ -44,7 +44,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'ervandew/supertab'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'djoshea/vim-autoread'
 Plug 'slim-template/vim-slim'
@@ -368,6 +367,9 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
+
+" Add Coc Extensions here use CocUpdate to update
+let g:coc_global_extensions = ['coc-git', 'coc-go', 'coc-groovy', 'coc-json', 'coc-markdownlint', 'coc-sh', 'coc-yaml']
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
