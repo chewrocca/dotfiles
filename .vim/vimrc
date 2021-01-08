@@ -52,10 +52,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 "
-" :PlugInstall      - Installs plugins
-" :PlugUpdate       - Install or update plugins
-" :PlugUpgrade      - Upgrade Plug itself
-" :PlugClean[!]	    - Remove unlisted plugins (bang version will clean without prompt)
+" :PlugInstall    - Installs plugins
+" :PlugUpdate     - Install or update plugins
+" :PlugUpgrade    - Upgrade Plug itself
+" :PlugClean[!]	  - Remove unlisted plugins(bang will clean without prompting)
 
 call plug#end()
 """""""""""""""""""""""""""
@@ -369,7 +369,15 @@ set shortmess+=c
 set signcolumn=yes
 
 " Add Coc Extensions here use CocUpdate to update
-let g:coc_global_extensions = ['coc-git', 'coc-go', 'coc-groovy', 'coc-json', 'coc-markdownlint', 'coc-sh', 'coc-yaml']
+let g:coc_global_extensions = [
+  \ 'coc-git',
+  \ 'coc-go',
+  \ 'coc-groovy',
+  \ 'coc-json',
+  \ 'coc-markdownlint',
+  \ 'coc-sh',
+  \ 'coc-yaml'
+  \]
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
