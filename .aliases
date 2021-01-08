@@ -14,6 +14,7 @@ alias rm="trash -F"
 alias top="htop"
 alias tree="tree -a -I '.git'"
 alias vi="vim"
+alias tt="curl -s 'https://api.quotable.io/random' | jq -r '.content' | tt"
 
 # macOS specific
 alias python=/usr/local/bin/python3
