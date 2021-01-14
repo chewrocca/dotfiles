@@ -111,4 +111,8 @@ complete -o nospace -C /usr/local/bin/vault vault
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+if [[ $OS == OSX ]]; then 
+  alias rm='trash -F'
+fi
+
 source ~/.dotenv
