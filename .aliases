@@ -11,7 +11,6 @@ alias pip='$(which pip3)'
 alias pping="prettyping --nolegend"
 alias preview="fzf --height 40% --preview 'if file -i {}|grep -q binary; then file -b {}; else bat --color \"always\" {}; fi'"
 alias python='$(which python3)'
-alias rm='$(if [[ $OS == OSX ]]; then alias rm="trash -F"; else echo alias rm="/bin/rm"; fi)'
 alias top="sudo htop"
 alias tree="tree -a -I '.git'"
 alias tt="curl -s https://api.quotable.io/random | jq -r .content | tt"
