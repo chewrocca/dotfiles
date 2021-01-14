@@ -23,11 +23,12 @@ alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 Add this alias to your .bashrc or .zshrc. From now on, any git operation you would like to do in the .dotfiles repository can be done by the dotfiles alias. The cool thing is that you can run dotfiles from anywhere.
 
-## Let’s add a remote, and also set status not to show untracked files
+## Let’s add a remote, set status not to show untracked files, and hide README.md
 
 ```sh
 dotfiles config --local status.showUntrackedFiles no
 dotfiles remote add origin git@github.com:chewrocca/dotfiles.git
+dotfiles update-index --assume-unchanged README.md
 ```
 
 You’ll need to change the remote URL to your git repo. Now, you can easily add the config files you want to be in version control from where they are supposed to be, commit and push. For example, to add tmux config files, I’ll do:
