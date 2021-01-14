@@ -26,9 +26,8 @@ Add this alias to your .bashrc or .zshrc. From now on, any git operation you wou
 ## Let’s add a remote, set status not to show untracked files, and hide README.md
 
 ```sh
-dotfiles config --local status.showUntrackedFiles no
 dotfiles remote add origin git@github.com:chewrocca/dotfiles.git
-dotfiles update-index --assume-unchanged README.md
+dotfiles config --local status.showUntrackedFiles no
 ```
 
 You’ll need to change the remote URL to your git repo. Now, you can easily add the config files you want to be in version control from where they are supposed to be, commit and push. For example, to add tmux config files, I’ll do:
@@ -55,5 +54,7 @@ git clone --separate-git-dir=$HOME/.dotfiles https://github.com/chewrocca/dotfil
 rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
 rm -r tmpdotfiles
 ```
+
+> If you want to remove the README.md feel free and then run `dotfiles update-index --assume-unchanged README.md`
 
 There you go. No symlink mess.
