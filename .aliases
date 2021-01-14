@@ -3,16 +3,16 @@
 alias cat="bat --map-syntax vimrc:VimL --paging=never --decorations=never --theme="DarkNeon""
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
-alias dotfiles='$(which git) --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias diff="icdiff --line-numbers"
+alias dotfiles='$(which git) --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias help="tldr"
 alias pip='$(which pip3)'
 alias pping="prettyping --nolegend"
 alias preview="fzf --height 40% --preview 'if file -i {}|grep -q binary; then file -b {}; else bat --color \"always\" {}; fi'"
-alias rm="trash -F"
+alias python='$(which python3)'
+alias rm='$(if [[ $OS == OSX ]]; then alias rm="trash -F"; fi)'
 alias top="sudo htop"
 alias tree="tree -a -I '.git'"
+alias tt="curl -s https://api.quotable.io/random | jq -r .content | tt"
 alias vi="vim"
-alias tt="curl -s 'https://api.quotable.io/random' | jq -r '.content' | tt"
-alias python='$(which python3)'
