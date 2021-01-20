@@ -6,6 +6,7 @@
       "args": ["serve"],
       "filetypes": [
         "terraform",
+        "*.tfvars",
         "tf"
       ],
       "initializationOptions": {},
