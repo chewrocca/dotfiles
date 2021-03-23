@@ -2,12 +2,6 @@
   showtool = "!f() { git difftool $1^ $1; }; f"
   added = difftool --cached
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-[commit]
-  template = $HOME/.config/git/git_config_msg.txt
-[core]
-  autocrlf = input
-  pager = less -r
-  excludesfile = $HOME/.config/git/ignore
 [color]
   ui = auto
 [color "branch"]
@@ -15,11 +9,11 @@
   local = green bold
   remote = cyan bold
 [commit]
-  template = ~/.config/git/git_config_msg.txt
+  template = $HOME/.config/git/git_config_msg.txt
 [core]
   autocrlf = input
   editor = vim
-  excludesfile = ~/.config/git/ignore
+  excludesfile = $HOME/.config/git/ignore
   ignorecase = false
   pager = less -r
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -28,7 +22,7 @@
 [difftool]
   prompt = false
 [difftool "icdiff"]
-  cmd = /usr/local/bin/icdiff --highlight --line-numbers $LOCAL $REMOTE
+  cmd = icdiff --highlight --line-numbers $LOCAL $REMOTE
 [filter "lfs"]
   required = true
   clean = git-lfs clean -- %f
