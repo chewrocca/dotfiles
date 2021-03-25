@@ -9,11 +9,11 @@
   local = green bold
   remote = cyan bold
 [commit]
-  template = $HOME/.config/git/git_config_msg.txt
+  template = ~/.config/git/git_config_msg.txt
 [core]
   autocrlf = input
   editor = vim
-  excludesfile = $HOME/.config/git/ignore
+	excludesfile = ~/.config/git/ignore
   ignorecase = false
   pager = less -r
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
