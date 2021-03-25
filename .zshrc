@@ -112,3 +112,4 @@ complete -o nospace -C /usr/local/bin/vault vault
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source ~/.dotenv
+function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
