@@ -14,7 +14,7 @@
 [core]
   autocrlf = input
   editor = vim
-	excludesfile = ~/.config/git/gitignore
+  excludesfile = ~/.config/git/gitignore
   ignorecase = false
   pager = less -r
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -31,6 +31,8 @@
   process = git-lfs filter-process
 [icdiff]
   options = --highlight --line-numbers
+#[init]
+#  templatedir = ~/.config/git/git-templates
 [pager]
   difftool = true
   diff = diff-so-fancy | less --tabs=1,5 -RFX
