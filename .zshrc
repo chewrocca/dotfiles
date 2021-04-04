@@ -12,6 +12,7 @@ case "$OSTYPE" in
   linux*)
     # ...
     alias bat="batcat"
+    touch ~/.dotenv
   ;;
   dragonfly*|freebsd*|netbsd*|openbsd*)
     # ...
