@@ -5,13 +5,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-case `uname` in
-  Darwin)
-    # commands for OS X go here
+case "$OSTYPE" in
+  darwin*)
+    # ...
   ;;
-  Linux)
-    # commands for Linux go here
+  linux*)
+    # ...
     alias bat="batcat"
+  ;;
+  dragonfly*|freebsd*|netbsd*|openbsd*)
+    # ...
   ;;
 esac
 
