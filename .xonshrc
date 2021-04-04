@@ -62,8 +62,8 @@ $MULTILINE_PROMPT = '....'
 $PROMPT = ('{env_name:{}}' +
            '{BOLD_GREEN}{user}@{hostname}' +
            '{BOLD_CYAN} {cwd_base}{branch_color} ' +
-           '{curr_branch:[{}]}{NO_COLOR}' +
-           '{BOLD_CYAN}{prompt_end}{NO_COLOR} ')
+           '{curr_branch:[{}]}{RESET}' +
+           '{BOLD_CYAN}{prompt_end}{RESET} ')
 
 
 # This does not appear to be working at the moment
