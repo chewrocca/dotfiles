@@ -19,6 +19,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'cormacrelf/vim-colors-github'
 Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-vagrant'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'elzr/vim-json'
 Plug 'google/vim-jsonnet'
