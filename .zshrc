@@ -8,6 +8,7 @@ fi
 case "$OSTYPE" in
   darwin*)
     # ...
+    alias rm='trash -F'
   ;;
   linux*)
     # ...
