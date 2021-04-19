@@ -127,3 +127,8 @@ complete -o nospace -C /usr/local/bin/vault vault
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source ~/.dotenv
+
+# >>>> Vagrant command completion (start)
+fpath=(/opt/vagrant/embedded/gems/2.2.15/gems/vagrant-2.2.15/contrib/zsh $fpath)
+compinit
+# <<<<  Vagrant command completion (end)

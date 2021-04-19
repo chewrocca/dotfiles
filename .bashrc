@@ -158,3 +158,7 @@ complete -C /usr/local/bin/vault vault
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 complete -C /usr/local/bin/terraform terraform
+
+# >>>> Vagrant command completion (start)
+. /opt/vagrant/embedded/gems/2.2.15/gems/vagrant-2.2.15/contrib/bash/completion.sh
+# <<<<  Vagrant command completion (end)
