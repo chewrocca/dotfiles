@@ -1,8 +1,10 @@
 [alias]
-  showtool = "!f() { git difftool $1^ $1; }; f"
   added = difftool --cached
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  showtool = "!f() { git difftool $1^ $1; }; f"
   ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  top = !git log --format=format:%an | sort | uniq -c | sort -r | head -n 20
+  x = "!f() { github .; }; f"
 [color]
   ui = auto
 [color "branch"]
@@ -13,7 +15,7 @@
   template = ~/.config/git/git_config_msg.txt
 [core]
   autocrlf = input
-  editor = vim
+  editor = $EDITOR
   excludesfile = ~/.config/git/gitignore
   ignorecase = false
   pager = less -r
