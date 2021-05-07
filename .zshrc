@@ -27,12 +27,12 @@ esac
 ZSH_DOTENV_FILE=~/.dotenv
 ZSH_DOTENV_PROMPT=false
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 export GOPATH=$HOME/go
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$GOPATH/bin:$PATH
-export TERM="xterm-256color"
 export EDITOR="vim"
 export MYVIMRC="~/.vim/vimrc"
+export PAGER="more"
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$GOPATH/bin:$PATH
+export TERM="xterm-256color"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -112,6 +112,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "Aloxaf/fzf-tab",                    defer:3
 zplug "romkatv/powerlevel10k",             as:theme
 zplug "robbyrussell/oh-my-zsh",            as:plugin, use:"lib/*.zsh"
+zplug 'zplug/zplug',                       hook-build:'zplug --self-manage'
 
 # zplug check returns true if all packages are installed
 # Therefore, when it returns false, run zplug install
@@ -132,3 +133,6 @@ source ~/.dotenv
 fpath=(/opt/vagrant/embedded/gems/2.2.15/gems/vagrant-2.2.15/contrib/zsh $fpath)
 compinit
 # <<<<  Vagrant command completion (end)
+
+eval "$(navi widget zsh)"
+
