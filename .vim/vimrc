@@ -17,6 +17,7 @@ endif
 " Vim-Plug Plugins "
 """"""""""""""""""""
 call plug#begin('~/.vim/plugged')
+Plug 'jvirtanen/vim-hcl'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'hashivim/vim-terraform'
 Plug 'hashivim/vim-vagrant'
