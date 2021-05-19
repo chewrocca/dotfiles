@@ -1,6 +1,6 @@
 # For a full list of active aliases, run `alias`.
 #
-alias cat="bat --map-syntax vimrc:VimL --paging=never --decorations=never --theme="DarkNeon""
+alias cat="bat --map-syntax '*.nomad:Terraform' --map-syntax vimrc:VimL --paging=never --decorations=never --theme="DarkNeon""
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 alias diff="icdiff --line-numbers"
