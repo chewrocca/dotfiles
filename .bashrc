@@ -162,3 +162,13 @@ complete -C /usr/local/bin/terraform terraform
 # >>>> Vagrant command completion (start)
 . /opt/vagrant/embedded/gems/2.2.15/gems/vagrant-2.2.15/contrib/bash/completion.sh
 # <<<<  Vagrant command completion (end)
+
+############## BEGIN LOKI-SHELL #####################
+
+# NOTE when changing the Loki URL, also remember to change the promtail config: ~/.loki-shell/config/promtail-logging-config.yaml
+
+export LOKI_URL="http://localhost:4100"
+
+[ -f ~/.loki-shell/shell/loki-shell.bash ] && source ~/.loki-shell/shell/loki-shell.bash
+
+############## END LOKI-SHELL   #####################

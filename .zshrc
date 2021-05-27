@@ -136,3 +136,13 @@ compinit
 
 eval "$(navi widget zsh)"
 
+
+############## BEGIN LOKI-SHELL #####################
+
+# NOTE when changing the Loki URL, also remember to change the promtail config: ~/.loki-shell/config/promtail-logging-config.yaml
+
+export LOKI_URL="http://localhost:4100"
+
+[ -f ~/.loki-shell/shell/loki-shell.zsh ] && source ~/.loki-shell/shell/loki-shell.zsh
+
+############## END LOKI-SHELL   #####################
