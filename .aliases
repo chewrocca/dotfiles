@@ -1,6 +1,8 @@
 # For a full list of active aliases, run `alias`.
 #
-alias cat="bat --map-syntax '*.nomad:Terraform' --map-syntax vimrc:VimL --paging=never --decorations=never --theme="DarkNeon""
+# switch bat theme based on Light/Dark mode
+alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo gruvbox-light || echo DarkNeon)"
+#
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 alias diff="icdiff --line-numbers"

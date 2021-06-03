@@ -26,10 +26,12 @@ esac
 # in ~/.zshrc, before Oh My Zsh is sourced:
 ZSH_DOTENV_FILE=~/.dotenv
 ZSH_DOTENV_PROMPT=false
+
 # If you come from bash you might have to change your $PATH.
-export GOPATH=$HOME/go
+export BAT_CONFIG_PATH=$HOME/.config/bat/config
 export EDITOR="vim"
-export MYVIMRC="~/.vim/vimrc"
+export GOPATH=$HOME/go
+export MYVIMRC=$HOME/.vim/vimrc
 export PAGER="more"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$GOPATH/bin:$PATH
 export TERM="xterm-256color"
