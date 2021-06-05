@@ -12,7 +12,6 @@
 --paging=never
 
 # Syntax mappings: map a certain filename pattern to a language.
---map-syntax ".ignore:Git Ignore"
 --map-syntax "*.nomad:Terraform"
 --map-syntax "vimrc:VimL"
 --map-syntax '.aliases:Bourne Again Shell (bash)'
