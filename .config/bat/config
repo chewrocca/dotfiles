@@ -13,6 +13,7 @@
 
 # Syntax mappings: map a certain filename pattern to a language.
 --map-syntax "*.nomad:Terraform"
+--map-syntax "*.tpl:Terraform"
 --map-syntax "vimrc:VimL"
 --map-syntax '.aliases:Bourne Again Shell (bash)'
 --map-syntax '.dotenv:Bourne Again Shell (bash)'
