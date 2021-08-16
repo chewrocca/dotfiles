@@ -33,7 +33,8 @@
   process = git-lfs filter-process
 [icdiff]
   options = --highlight --line-numbers
-#[init]
+[init]
+  defaultBranch = main
 #  templatedir = ~/.config/git/git-templates
 [pager]
   difftool = true
