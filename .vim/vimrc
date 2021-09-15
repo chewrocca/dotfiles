@@ -18,9 +18,8 @@ endif
 """"""""""""""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'jvirtanen/vim-hcl'
+Plug 'hashivim/vim-hashicorp-tools'
 Plug 'cormacrelf/vim-colors-github'
-Plug 'hashivim/vim-terraform'
-Plug 'hashivim/vim-vagrant'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'elzr/vim-json'
 Plug 'google/vim-jsonnet'
@@ -502,3 +501,8 @@ nnoremap <silent> <C-n> :set relativenumber!<cr>
 " open splits below
 set splitbelow
 
+" folding
+set foldnestmax=10
+set foldlevel=2
+set foldmethod=syntax
+set nofoldenable
