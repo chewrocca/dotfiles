@@ -89,12 +89,14 @@ if [ $(command -v direnv) ]; then
   eval "$(direnv hook zsh)"
 fi
 
-# Zplug Section
-if [[ ! -d ~/.zplug ]];then
-    git clone https://github.com/zplug/zplug.git ~/.zplug
-fi
 
-source ~/.zplug/init.zsh
+# Check if zplug is installed
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+  source ~/.zplug/init.zsh && zplug update
+else
+  source ~/.zplug/init.zsh
+fi
 
 # Supports oh-my-zsh plugins and the like
 zplug "plugins/aws",                       from:oh-my-zsh
