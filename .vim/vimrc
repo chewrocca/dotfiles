@@ -53,7 +53,6 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'fszymanski/fzf-gitignore', {'do': ':UpdateRemotePlugins'}
 "
 " :PlugInstall    - Installs plugins
 " :PlugUpdate     - Install or update plugins
