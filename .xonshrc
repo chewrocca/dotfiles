@@ -2,7 +2,6 @@ import os
 import sys
 import socket
 
-
 #source-bash --login True "echo loading xonsh foreign shell" .bashrc
 source-bash ~/.bashrc
 
@@ -82,3 +81,6 @@ $IBM_DB_HOME="/Applications/dsdriver"
 del os
 del sys
 del socket
+
+# workaround https://github.com/xonsh/xonsh/issues/4409
+__import__('warnings').simplefilter('ignore', DeprecationWarning, 882)
