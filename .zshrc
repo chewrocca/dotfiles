@@ -107,7 +107,7 @@ zplug "plugins/docker-compose",            from:oh-my-zsh
 zplug "plugins/dotenv",                    from:oh-my-zsh
 zplug "plugins/fzf",                       from:oh-my-zsh
 zplug "plugins/git",                       from:oh-my-zsh
-zplug "plugins/osx",                       from:oh-my-zsh
+zplug "plugins/macos",                       from:oh-my-zsh
 zplug "plugins/terraform",                 from:oh-my-zsh
 zplug "plugins/virtualenv",                from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions",     defer:2
@@ -139,7 +139,6 @@ compinit
 # <<<<  Vagrant command completion (end)
 
 eval "$(navi widget zsh)"
-
 
 ############## BEGIN LOKI-SHELL #####################
 
