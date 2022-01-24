@@ -32,7 +32,7 @@ export BAT_CONFIG_PATH=$HOME/.config/bat/config
 export EDITOR="vim"
 export GOPATH=$HOME/go
 export MYVIMRC=$HOME/.vim/vimrc
-export PAGER="more"
+export PAGER="less"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$GOPATH/bin:$PATH
 export TERM="xterm-256color"
 
@@ -40,7 +40,13 @@ export TERM="xterm-256color"
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 autoload -U +X bashcompinit && bashcompinit
-autoload -U compinit && compinit
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
 
 complete -o nospace -C /usr/local/bin/vault vault
 
@@ -132,11 +138,6 @@ complete -o nospace -C /usr/local/bin/vault vault
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source ~/.dotenv
-
-# >>>> Vagrant command completion (start)
-fpath=(/opt/vagrant/embedded/gems/2.2.15/gems/vagrant-2.2.15/contrib/zsh $fpath)
-compinit
-# <<<<  Vagrant command completion (end)
 
 eval "$(navi widget zsh)"
 
