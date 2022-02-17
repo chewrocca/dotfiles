@@ -9,10 +9,14 @@ case "$OSTYPE" in
   darwin*)
     # ...
     alias rm='trash -F'
+    export GIT_EDITOR=code\ --wait
+    export EDITOR="code"
+    export SSH_AUTH_SOCK=~/.1password/agent.sock
   ;;
   linux*)
     # ...
     alias bat="batcat"
+    export EDITOR="vim"
     touch ~/.dotenv
   ;;
   dragonfly*|freebsd*|netbsd*|openbsd*)
@@ -29,12 +33,12 @@ ZSH_DOTENV_PROMPT=false
 
 # If you come from bash you might have to change your $PATH.
 export BAT_CONFIG_PATH=$HOME/.config/bat/config
-export EDITOR="vim"
 export GOPATH=$HOME/go
 export MYVIMRC=$HOME/.vim/vimrc
 export PAGER="less"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$GOPATH/bin:$PATH
 export TERM="xterm-256color"
+export VISUAL="vim"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
