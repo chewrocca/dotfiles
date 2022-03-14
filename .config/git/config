@@ -15,6 +15,7 @@
   remote = cyan bold
 [commit]
   template = ~/.config/git/git_config_msg.txt
+  gpgsign = true
 [core]
   autocrlf = input
   editor = $EDITOR
@@ -48,5 +49,8 @@
 [user]
   name = Matthew Fine
   email = 17680862+chewrocca@users.noreply.github.com
+  signingkey = A606AA32C31A740F
+[includeIf "gitdir:~/bitbucket/**/*"]
+  path = ~/.config/git/gitconfig-work
 [web]
   browser = safari
