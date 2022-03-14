@@ -117,7 +117,7 @@ zplug "plugins/docker-compose",            from:oh-my-zsh
 zplug "plugins/dotenv",                    from:oh-my-zsh
 zplug "plugins/fzf",                       from:oh-my-zsh
 zplug "plugins/git",                       from:oh-my-zsh
-zplug "plugins/macos",                       from:oh-my-zsh
+zplug "plugins/macos",                     from:oh-my-zsh
 zplug "plugins/terraform",                 from:oh-my-zsh
 zplug "plugins/virtualenv",                from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions",     defer:2
@@ -154,3 +154,13 @@ export LOKI_URL="http://localhost:4100"
 [ -f ~/.loki-shell/shell/loki-shell.zsh ] && source ~/.loki-shell/shell/loki-shell.zsh
 
 ############## END LOKI-SHELL   #####################
+
+# exa aliases
+alias ls='exa'                                                         # ls
+alias l='exa -lbF --git'                                               # list, size, type, git
+alias ll='exa -lbGF --git'                                             # long list
+alias llm='exa -lbGF --git --sort=modified'                            # long list, modified date sort
+alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
+alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
+alias lS='exa -1'                                                      # one column, just names
+alias lt='exa --tree --level=2'                                        # tree
