@@ -49,7 +49,7 @@
 [user]
   name = Matthew Fine
   email = 17680862+chewrocca@users.noreply.github.com
-  signingkey = A606AA32C31A740F
+  signingkey = 770E1F533F8EE13C
 [includeIf "gitdir:~/bitbucket/**/*"]
   path = ~/.config/git/gitconfig-work
 [web]
