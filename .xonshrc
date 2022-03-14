@@ -81,12 +81,3 @@ $IBM_DB_HOME="/Applications/dsdriver"
 del os
 del sys
 del socket
-
-# workaround https://github.com/xonsh/xonsh/issues/4409
-import warnings
-warnings.filterwarnings(
-    'ignore',
-    message='There is no current event loop',
-    category=DeprecationWarning,
-    module='prompt_toolkit',
-)
