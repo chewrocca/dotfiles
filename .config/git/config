@@ -48,7 +48,8 @@
   ff = only
 [user]
   name = Matthew Fine
-  email = 17680862+chewrocca@users.noreply.github.com
+  #email = 17680862+chewrocca@users.noreply.github.com
+  email = matt.fine@gmail.com
   signingkey = 770E1F533F8EE13C
 [includeIf "gitdir:~/bitbucket/**/*"]
   path = ~/.config/git/gitconfig-work
