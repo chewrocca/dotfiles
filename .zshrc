@@ -92,9 +92,6 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# Aliases
-source $HOME/.aliases
-
 if [ $(command -v direnv) ]; then
   eval "$(direnv hook zsh)"
 fi
@@ -155,12 +152,5 @@ export LOKI_URL="http://localhost:4100"
 
 ############## END LOKI-SHELL   #####################
 
-# exa aliases
-alias ls='exa'                                                         # ls
-alias l='exa -lbF --git'                                               # list, size, type, git
-alias ll='exa -lbGF --git'                                             # long list
-alias llm='exa -lbGF --git --sort=modified'                            # long list, modified date sort
-alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
-alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
-alias lS='exa -1'                                                      # one column, just names
-alias lt='exa --tree --level=2'                                        # tree
+# Aliases
+source $HOME/.aliases
