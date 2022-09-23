@@ -55,3 +55,9 @@
   path = ~/.config/git/gitconfig-work
 [web]
   browser = safari
+[help]
+	autocorrect = 1
+[remote "origin"]
+	prune = true
+[fetch]
+	prune = true
