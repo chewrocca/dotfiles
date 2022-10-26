@@ -32,18 +32,25 @@ ZSH_DOTENV_FILE=~/.dotenv
 ZSH_DOTENV_PROMPT=false
 
 export BAT_CONFIG_PATH=$HOME/.config/bat/config
-export GOPATH=$HOME/go
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=500000
 export SAVEHIST=500000
 export MYVIMRC=$HOME/.vim/vimrc
 export PAGER="less"
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$GOPATH/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export TERM="xterm-256color"
 export VISUAL="vim"
 setopt appendhistory
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
+
+# Go development
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
