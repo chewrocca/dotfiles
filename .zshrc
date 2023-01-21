@@ -27,6 +27,9 @@ esac
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# 1Password Shell Plugins
+source $HOME/.op/plugins.sh
+
 # in ~/.zshrc, before Oh My Zsh is sourced:
 ZSH_DOTENV_FILE=~/.dotenv
 ZSH_DOTENV_PROMPT=false
