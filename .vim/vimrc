@@ -27,7 +27,7 @@ Plug 'morhetz/gruvbox'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'VundleVim/Vundle.vim'
 Plug 'davidhalter/jedi-vim'
-Plug 'fatih/vim-go'
+"Plug 'fatih/vim-go'
 Plug 'vim-syntastic/syntastic'
 Plug 'cespare/vim-toml'
 Plug 'flazz/vim-colorschemes'
@@ -532,4 +532,5 @@ set foldlevel=2
 set foldmethod=syntax
 set nofoldenable
 
-autocmd BufNewFile,BufRead *.nomad,*.tpl set filetype=hcl
+autocmd BufNewFile,BufRead *.nomad,*.tpl,*.river set filetype=hcl
+autocmd BufNewFile,BufRead *.dotenv set filetype=bash

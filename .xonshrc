@@ -3,7 +3,7 @@ import sys
 import socket
 
 #source-bash --login True "echo loading xonsh foreign shell" .bashrc
-source-bash ~/.bashrc
+#source-bash ~/.bashrc
 
 # Load vi mode disables most ctrl commands but allows shell to act like vi
 #xontrib load prompt_vi_mode

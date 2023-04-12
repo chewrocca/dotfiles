@@ -27,9 +27,6 @@ esac
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# 1Password Shell Plugins
-source $HOME/.op/plugins.sh
-
 # in ~/.zshrc, before Oh My Zsh is sourced:
 ZSH_DOTENV_FILE=~/.dotenv
 ZSH_DOTENV_PROMPT=false
@@ -49,7 +46,8 @@ setopt SHARE_HISTORY
 
 # Go development
 export GOPATH="${HOME}/.go"
-export GOROOT="$(brew --prefix golang)/libexec"
+#export GOROOT="$(brew --prefix golang)/libexec"
+export GOROOT=/usr/local/opt/go/libexec
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 test -d "${GOPATH}" || mkdir "${GOPATH}"
@@ -61,7 +59,8 @@ test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 autoload -U +X bashcompinit && bashcompinit
 
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  #FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  FPATH=/usr/local/share/zsh-completions:$FPATH
 
   autoload -Uz compinit
   compinit
@@ -110,7 +109,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 if [ $(command -v direnv) ]; then
   eval "$(direnv hook zsh)"
 fi
-
 
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
@@ -166,6 +164,11 @@ export LOKI_URL="http://localhost:4100"
 [ -f ~/.loki-shell/shell/loki-shell.zsh ] && source ~/.loki-shell/shell/loki-shell.zsh
 
 ############## END LOKI-SHELL   #####################
+
+# 1Password Shell Plugins
+source $HOME/.op/plugins.sh
+# 1Password completion
+eval "$(op completion zsh)"; compdef _op op
 
 # Aliases
 source $HOME/.aliases
