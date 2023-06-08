@@ -18,3 +18,4 @@
 --map-syntax '.aliases:Bourne Again Shell (bash)'
 --map-syntax '.dotenv:Bourne Again Shell (bash)'
 --map-syntax '.zsh_*:Bourne Again Shell (bash)'
+--map-syntax '*.conf:Bourne Again Shell (bash)'
