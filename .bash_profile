@@ -14,3 +14,5 @@ if [ -f '$HOME/google-cloud-sdk/completion.bash.inc' ]; then . '$HOME/google-clo
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
  . $(brew --prefix)/etc/bash_completion
 fi
+
+complete -C /usr/local/bin/nomad nomad
