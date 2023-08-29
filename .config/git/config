@@ -29,13 +29,23 @@
   prompt = false
 [difftool "icdiff"]
   cmd = icdiff --highlight --line-numbers $LOCAL $REMOTE
+[fetch]
+  prune = true
 [filter "lfs"]
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
+#[gpg]
+#  format = ssh
+#[gpg "ssh"]
+#  #program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[help]
+  autocorrect = 1
 [icdiff]
   options = --highlight --line-numbers
+[includeIf "gitdir:~/bitbucket/**/*"]
+  path = ~/.config/git/gitconfig-work
 [init]
   defaultBranch = main
 #  templatedir = ~/.config/git/git-templates
@@ -44,20 +54,14 @@
   diff = diff-so-fancy | less --tabs=1,5 -RFX
   show = diff-so-fancy | less --tabs=1,5 -RFX
   branch = false
-	log = false
+  log = false
 [pull]
   ff = only
+[remote "origin"]
+  prune = true
 [user]
   name = Matthew Fine
   email = 17680862+chewrocca@users.noreply.github.com
   signingkey = 770E1F533F8EE13C
-[includeIf "gitdir:~/bitbucket/**/*"]
-  path = ~/.config/git/gitconfig-work
 [web]
   browser = safari
-[help]
-	autocorrect = 1
-[remote "origin"]
-	prune = true
-[fetch]
-	prune = true
