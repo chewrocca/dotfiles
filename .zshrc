@@ -148,6 +148,7 @@ fi
 zplug load
 
 complete -o nospace -C /usr/local/bin/vault vault
+complete -o nospace -C /usr/local/bin/nomad nomad
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -172,3 +173,5 @@ eval "$(op completion zsh)"; compdef _op op
 
 # Aliases
 source $HOME/.aliases
+autoload -U compinit; compinit
+
