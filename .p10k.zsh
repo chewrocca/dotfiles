@@ -40,7 +40,7 @@
     virtualenv
     vcs                     # git status
     # =========================[ Line #2 ]=========================
-    newline                 # \n
+    #newline                 # \n
     # prompt_char           # prompt symbol
   )
 
@@ -56,7 +56,7 @@
   status                  # exit code of the last command
   time                    # current time
   dir_writable
-  ip                      # ip address and bandwidth usage for a specified network interface
+  #  ip                      # ip address and bandwidth usage for a specified network interface
   custom_wifi_signal
   ram                     # free RAM
   battery                 # internal battery
